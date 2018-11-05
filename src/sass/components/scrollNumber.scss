@@ -1,0 +1,47 @@
+@import '../common/mixin.scss';
+.scroll-num-wrap {
+    display: flex;
+    height: 80px;
+    margin-top: 20px;
+    margin-left: 20px;
+    line-height: 80px;
+    text-align: center;
+    margin-right: 15px;
+    .scroll-number-item {
+        position: relative;
+        height: 100%;
+        width: 40px;
+        overflow: hidden;
+        >ul{
+            width: 100%;
+            transform: translateY(0);
+            transition: transform 0.5s ease-out;
+            li{
+                font-size: 60px;
+                color: #4d4d4d;
+            }
+        }
+    }
+    &.active{
+        position: absolute;
+        height: px2rem(80px);
+        margin-top: px2rem(20px);
+        margin-left: px2rem(20px);
+        line-height: px2rem(80px);
+        text-align: center;
+        margin-right: px2rem(15px);
+        top: 50%;
+        margin-top: px2rem(-40px);
+        right: px2rem(60px);
+        >.scroll-number-item{
+            // position: absolute;
+            width: px2rem(40px);
+            >ul{
+                >li{
+                    font-size: px2rem(60px);
+                }
+            }
+        }
+    }
+}
+

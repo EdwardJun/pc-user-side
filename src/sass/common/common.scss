@@ -1,0 +1,33 @@
+@import 'normalize.scss';
+@import 'reset.scss';
+@import 'mixin.scss';
+
+// clear float
+.clear-fix,.clearfix {
+    &:before, &:after {
+        content: "";
+        display: block;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+div.pop-modal{
+    @include mask();
+    z-index: 11;
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    opacity: 0;
+    // transition: transform 0.5s ease-out, opacity 0.5s;
+    &.active{
+        opacity: 1;
+        transform: scaleY(1);
+    }
+    > div.center-wrap{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        @include translate(-50%, -50%);
+    }
+}

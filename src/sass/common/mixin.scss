@@ -1,0 +1,54 @@
+@mixin shadow {
+    box-shadow: 0 0 15px 0 rgba(35, 52, 75, 0.1);
+}
+
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin sl() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin slh($line) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: block-axis;
+    word-break: break-all;
+}
+
+@mixin img($url,$size: 100% 100%){
+    -webkit-background-size:$size;
+    -moz-background-size:$size;
+    -o-background-size:$size;
+    background-size:$size;
+    background-image: url($url);
+    background-repeat: no-repeat;
+}
+
+@mixin mask(){
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:rgba(0,0,0,0.6);
+}
+@mixin translate($x,$y){//cs3位移
+    -webkit-transform: translate($x,$y);
+    -moz-transform: translate($x,$y);
+    -o-transform: translate($x,$y);
+    -ms-transform: translate($x,$y);
+    transform: translate($x,$y);
+  }
+@function px2rem($num){
+    @return $num / 1px / 36 * 1rem;
+}
